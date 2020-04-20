@@ -2,22 +2,37 @@
 #+STARTUP: hidestars
 #+TODO: TODO(t) IN-PROGRESS(p) WAITING(w) | DONE(d) CANCELLED(c) WON'FIX(n)
 * Docker image for emacs ready for clojure development
-** Create docker Container with clojure and emacs/cider [4/7]
+** Prerequisite
+   You need docker in an GNU/Linux environment installed.
+** Usage
+   Currently this container only works within a shell. You can mount the current directory as a volume and start with a file to open.
+    #+BEGIN_SRC sh
+    export FILE_TO_OPEN=my-file.txt
+    docker run -it -v $(pwd):/src:rw -e FILE_TO_OPEN javadent/clojure-emacs
+    #+END_SRC
+
+** Create docker Container with clojure and emacs/cider [6/7]
+
 *** DONE Docker File 
     #+BEGIN_SRC sh
     docker build -t javadent/clojure-emacs:0.0.1 .
     #+END_SRC
 
-    #+RESULTS:
-
     Error while making emacs.
     https://askubuntu.com/questions/318315/how-can-i-temporarily-disable-aslr-address-space-layout-randomization
+    #+BEGIN_SRC sh
     echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
+    #+END_SRC
 *** DONE Emacs running in shell
+    #+BEGIN_SRC sh
     docker run -it -v $(pwd):/src:rw javadent/clojure-emacs
+    #+END_SRC
     only bash in container:
+    #+BEGIN_SRC sh
     docker run -it -v $(pwd):/src:rw javadent/clojure-emacs bash
+    #+END_SRC
 *** TODO Emacs running on X11
+    #+BEGIN_SRC sh
     docker run --rm -it \
     -e DISPLAY \
     -v $(pwd):/src:rw \
@@ -25,14 +40,17 @@
     -v $XAUTHORITY:/root/.Xauthority \
     --net=host \
     javadent/clojure-emacs
+    #+END_SRC
 **** remove apparmor
     http://www.techytalk.info/disable-and-remove-apparmor-on-ubuntu-based-linux-distributions/
+    #+BEGIN_SRC sh
     sudo /etc/init.d/apparmor stop
     sudo update-rc.d -f apparmor remove
+    #+END_SRC
 *** DONE cider is available in emacs
 *** DONE maven repository is populated with some clojure libraries
-*** IN-PROGRESS docker file is on github
-*** TODO docker container is on docker.hub
+*** DONE docker file is on github
+*** DONE docker container is on docker.hub
 *** BUGS
 **** TODO Does not start with X11 
 **** TODO Cannot copy&paste content from emacs in docker to host
