@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>frankiesardo</groupId>
+  <artifactId>linked</artifactId>
+  <version>1.2.6</version>
+  <name>linked</name>
+  <description>Efficient ordered map and set.</description>
+  <url>https://github.com/frankiesardo/linked</url>
+  <licenses>
+    <license>
+      <url>http://www.eclipse.org/legal/epl-v10.html</url>
+      <name>Eclipse Public License</name>
+      <comments/>
+    </license>
+  </licenses>
+  <scm>
+    <url>https://github.com/frankiesardo/linked</url>
+    <tag>828c18a2cbeaf3760073fefa61f828ad2e7cf96c</tag>
+  </scm>
+  <dependencies>
+    <dependency>
+      <groupId>adzerk</groupId>
+      <artifactId>boot-cljs</artifactId>
+      <version>0.0-3308-0</version>
+      <scope>test</scope>
+      <exclusions/>
+    </dependency>
+    <dependency>
+      <groupId>adzerk</groupId>
+      <artifactId>boot-cljs-repl</artifactId>
+      <version>0.1.9</version>
+      <scope>test</scope>
+      <exclusions/>
+    </dependency>
+    <dependency>
+      <groupId>crisptrutski</groupId>
+      <artifactId>boot-cljs-test</artifactId>
+      <version>0.1.0-SNAPSHOT</version>
+      <scope>test</scope>
+      <exclusions/>
+    </dependency>
+    <dependency>
+      <groupId>collection-check</groupId>
+      <artifactId>collection-check</artifactId>
+      <version>0.1.6</version>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.clojure</groupId>
+          <artifactId>clojure</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+  </dependencies>
+</project>

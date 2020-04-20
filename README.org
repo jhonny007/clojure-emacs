@@ -1,0 +1,40 @@
+#+STARTUP: showall
+#+STARTUP: hidestars
+#+TODO: TODO(t) IN-PROGRESS(p) WAITING(w) | DONE(d) CANCELLED(c) WON'FIX(n)
+* Docker image for emacs ready for clojure development
+** Create docker Container with clojure and emacs/cider [4/7]
+*** DONE Docker File 
+    #+BEGIN_SRC sh
+    docker build -t javadent/clojure-emacs:0.0.1 .
+    #+END_SRC
+
+    #+RESULTS:
+
+    Error while making emacs.
+    https://askubuntu.com/questions/318315/how-can-i-temporarily-disable-aslr-address-space-layout-randomization
+    echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
+*** DONE Emacs running in shell
+    docker run -it -v $(pwd):/src:rw javadent/clojure-emacs
+    only bash in container:
+    docker run -it -v $(pwd):/src:rw javadent/clojure-emacs bash
+*** TODO Emacs running on X11
+    docker run --rm -it \
+    -e DISPLAY \
+    -v $(pwd):/src:rw \
+    -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
+    -v $XAUTHORITY:/root/.Xauthority \
+    --net=host \
+    javadent/clojure-emacs
+**** remove apparmor
+    http://www.techytalk.info/disable-and-remove-apparmor-on-ubuntu-based-linux-distributions/
+    sudo /etc/init.d/apparmor stop
+    sudo update-rc.d -f apparmor remove
+*** DONE cider is available in emacs
+*** DONE maven repository is populated with some clojure libraries
+*** IN-PROGRESS docker file is on github
+*** TODO docker container is on docker.hub
+*** BUGS
+**** TODO Does not start with X11 
+**** TODO Cannot copy&paste content from emacs in docker to host
+*** IDEAS
+**** Emacs sticker for the first 5 users with feedback
