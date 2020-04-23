@@ -52,6 +52,11 @@ RUN apt-get update && \
     tree\
     && rm -rf /val/lib/apt/lists/*
 
+#K8s
+RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
+RUN chmod +x ./kubectl
+RUN mv ./kubectl /usr/local/bin/kubectl
+
 ENV EMACS_BRANCH="emacs-26.3"
 ENV EMACS_VERSION="26.3"
 
