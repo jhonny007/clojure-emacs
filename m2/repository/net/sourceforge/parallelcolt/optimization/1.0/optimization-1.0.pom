@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>net.sourceforge.parallelcolt</groupId>
+  <artifactId>optimization</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0</version>
+  <name>optimization</name>
+  <description>Optimization routines translated from FORTRAN to java.</description>
+  <url>http://www1.fpl.fs.fed.us/optimization.html</url>
+  
+  <licenses>
+    <license>
+      <name>Custom FPL License</name>
+      <url>http://www1.fpl.fs.fed.us/optimization.html</url>
+      <distribution>repo</distribution>
+      <comments>Public domain with no warranty</comments>
+    </license>
+  </licenses>
+  
+  <developers>
+    <developer>
+      <id>sverrill</id>
+      <name>Steve Verrill</name>
+      <email>sverrill@fs.fed.us</email>
+    </developer>
+  </developers>
+  
+  <scm>
+    <url>https://parallelcolt.svn.sourceforge.net/svnroot/parallelcolt</url>
+    <connection>scm:svn:https://parallelcolt.svn.sourceforge.net/svnroot/parallelcolt</connection>
+    <developerConnection>scm:svn:https://parallelcolt.svn.sourceforge.net/svnroot/parallelcolt</developerConnection>
+  </scm>
+
+</project>

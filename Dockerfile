@@ -1,3 +1,4 @@
+## -*- docker-image-name: "javadent/clojure-emacs:0.0.2" -*-
 from clojure:openjdk-8-lein-stretch as dev
 
 MAINTAINER Christian Gruber <christian.gruber@web.de>
@@ -17,6 +18,7 @@ RUN apt-get update && \
     automake \
     autotools-dev \
     build-essential\
+    bash-completion \
     curl \
     dpkg-dev \
     git \
@@ -100,6 +102,12 @@ COPY m2 /root/.m2
 
 # Set the `emacs-user-directory` used from the `init.el` file
 ENV EMACS_USER_DIRECTORY /code/
+
+# enable kubectl alias and autocompletion
+RUN echo "alias k=kubectl" >> /root/.bashrc
+RUN echo "complete -F __start_kubectl k" >> /root/.bashrc
+RUN echo "source <(kubectl completion bash)" >> /root/.bashrc
+RUN echo "source /etc/profile.d/bash_completion.sh" >> /root/.bashrc
 
 # Used to set the proper ctags executable
 ENV DOCKER true

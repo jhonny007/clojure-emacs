@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>swingrepl</groupId>
+  <artifactId>swingrepl</artifactId>
+  <version>1.3.0</version>
+  <name>swingrepl</name>
+  <description>A Swing Clojure REPL using BeanShell's JConsole</description>
+  <scm>
+    <connection>scm:git:git://github.com/alandipert/clj-swingrepl.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/alandipert/clj-swingrepl.git</developerConnection>
+    <tag>dbc3b207e8b6c90b0ffd7ea1650748c2c45442e1</tag>
+    <url>http://github.com/alandipert/clj-swingrepl</url>
+  </scm>
+  <build>
+    <sourceDirectory>src/clj</sourceDirectory>
+    <testSourceDirectory>test</testSourceDirectory>
+    <resources>
+      <resource>
+        <directory>resources</directory>
+      </resource>
+    </resources>
+    <testResources>
+      <testResource>
+        <directory>test-resources</directory>
+      </testResource>
+    </testResources>
+  </build>
+  <repositories>
+    <repository>
+      <id>central</id>
+      <url>http://repo1.maven.org/maven2</url>
+    </repository>
+    <repository>
+      <id>clojure</id>
+      <url>http://build.clojure.org/releases</url>
+    </repository>
+    <repository>
+      <id>clojure-snapshots</id>
+      <url>http://build.clojure.org/snapshots</url>
+    </repository>
+    <repository>
+      <id>clojars</id>
+      <url>http://clojars.org/repo/</url>
+    </repository>
+  </repositories>
+  <dependencies>
+    <dependency>
+      <groupId>org.clojure</groupId>
+      <artifactId>clojure</artifactId>
+      <version>1.3.0-alpha2</version>
+    </dependency>
+  </dependencies>
+</project>

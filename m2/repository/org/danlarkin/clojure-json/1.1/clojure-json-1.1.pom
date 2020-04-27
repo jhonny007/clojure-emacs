@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.danlarkin</groupId>
+  <artifactId>clojure-json</artifactId>
+  <version>1.1</version>
+  <name>clojure-json</name>
+  <scm>
+    <connection>scm:git:git://github.com/danlarkin/clojure-json.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/danlarkin/clojure-json.git</developerConnection>
+    <tag>b1bd49e1881116e2e441003f188bfc87efd3f70e</tag>
+    <url>http://github.com/danlarkin/clojure-json</url>
+  </scm>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <testSourceDirectory>test</testSourceDirectory>
+  </build>
+  <repositories>
+    <repository>
+      <id>central</id>
+      <url>http://repo1.maven.org/maven2</url>
+    </repository>
+    <repository>
+      <id>clojure</id>
+      <url>http://build.clojure.org/releases</url>
+    </repository>
+    <repository>
+      <id>clojure-snapshots</id>
+      <url>http://build.clojure.org/snapshots</url>
+    </repository>
+    <repository>
+      <id>clojars</id>
+      <url>http://clojars.org/repo/</url>
+    </repository>
+  </repositories>
+</project>

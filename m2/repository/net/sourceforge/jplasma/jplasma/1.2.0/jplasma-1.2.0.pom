@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>net.sourceforge.jplasma</groupId>
+  <artifactId>jplasma</artifactId>
+  <version>1.2.0</version>
+  <name>JPlasma</name>
+  <description>JPlasma is a Java port of PLASMA (Parallel Linear Algebra for Scalable Multi-core Architectures).</description>
+  <url>http://sourceforge.net/projects/jplasma/</url>
+
+  <licenses>
+    <license>
+      <name>The BSD License</name>
+      <url>http://www.opensource.org/licenses/bsd-license.php</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:svn:https://jplasma.svn.sourceforge.net/svnroot/jplasma/trunk/</connection>
+    <developerConnection>scm:svn:https://jplasma.svn.sourceforge.net/svnroot/jplasma/trunk/</developerConnection>
+    <url>https://jplasma.svn.sourceforge.net/svnroot/jplasma/trunk/</url>
+  </scm>
+
+  <developers>
+    <developer>
+      <id>wendykierp</id>
+      <name>Piotr Wendykier</name>
+      <email>piotr.wendykier@gmail.com</email>
+    </developer>
+  </developers>
+
+  <dependencies>
+    <dependency>
+      <groupId>net.sourceforge.jplasma</groupId>
+      <artifactId>core-lapack</artifactId>
+      <version>0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>net.sourceforge.f2j</groupId>
+      <artifactId>arpack_combined_all</artifactId>
+      <version>0.1</version>
+    </dependency>
+  </dependencies>
+
+</project>
