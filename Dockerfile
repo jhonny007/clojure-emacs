@@ -78,7 +78,6 @@ RUN cd /opt/emacs && \
 ENV PATH="/root/.cask/bin:$PATH"
 RUN curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
 
-
 # Checkout emacs configuration from github
 RUN git clone \
     --depth 1 \
@@ -108,6 +107,9 @@ RUN echo "alias k=kubectl" >> /root/.bashrc
 RUN echo "complete -F __start_kubectl k" >> /root/.bashrc
 RUN echo "source <(kubectl completion bash)" >> /root/.bashrc
 RUN echo "source /etc/profile.d/bash_completion.sh" >> /root/.bashrc
+
+# Use more colors
+ENV TERM xterm-256color
 
 # Used to set the proper ctags executable
 ENV DOCKER true
